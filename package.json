@@ -1,0 +1,17 @@
+{
+  "name": "com.perales.yeelight",
+  "version": "1.0.0",
+  "description": "Change color yeelight",
+  "cordova": {
+    "id": "com.perales.yeelight",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Israel Perales",
+  "license": "ISC"
+}
