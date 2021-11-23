@@ -16,6 +16,7 @@ import com.mollin.yapi.*;
 public class CordovaPluginYeelight extends CordovaPlugin {
 
     private static YeelightDevice device = null;
+    private static YeelightMusicServer server = null;
     private static int brightnessFlag = 0;
     private static String brightnessFlagResult = "cambio";
     private static YeelightEffect effectType = YeelightEffect.SMOOTH;
@@ -33,12 +34,13 @@ public class CordovaPluginYeelight extends CordovaPlugin {
             try{
                 if(device == null){
                     device = new YeelightDevice(ip, port, effectType, effectDuration);
-                    device.setColorTemperature(5500);
-                    device.setPower(true);
+                    server = device.enableMusicMode();
+                    server.setColorTemperature(5500);
+                    server.setPower(true);
                 }
-                device.setRGB( Integer.parseInt( rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2]));
+                server.setRGB( Integer.parseInt( rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2]));
                 if(brightnessFlag != brightness){
-                    device.setBrightness(brightness);
+                    server.setBrightness(brightness);
                     brightnessFlag = brightness;
                     brightnessFlagResult = " cambio";
                 }else{
