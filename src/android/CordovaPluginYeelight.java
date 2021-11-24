@@ -19,9 +19,9 @@ public class CordovaPluginYeelight extends CordovaPlugin {
     private static YeelightMusicServer server = null;
     private static int brightnessFlag = 0;
     private static String brightnessFlagResult = "cambio";
-    private static YeelightEffect effectType = YeelightEffect.SMOOTH;
+    private static YeelightEffect effectType = YeelightEffect.SUDDEN;
     private static int port = 55443;
-    private static int effectDuration = 1000;
+    private static int effectDuration = 0;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
